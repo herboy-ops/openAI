@@ -38,8 +38,8 @@ app.add_middleware(
 cache = TTLCache(maxsize=100, ttl=60)
 
 # Load environment variables for paths (ensure they are set in your environment)
-billing_path = os.getenv('BILLING_FILE_PATH', r"C:\Users\rahul.k\Desktop\javafor practice\Practice1.java\JAVA program\AI BOT CHAT\dummychatbox\master table data.xlsx")
-complaints_path = os.getenv('COMPLAINTS_FILE_PATH', r"C:\Users\rahul.k\Desktop\javafor practice\Practice1.java\JAVA program\AI BOT CHAT\dummychatbox\complaints.xlsx")
+billing_df = pd.read_excel("master table data.xlsx")
+complaints_df = pd.read_excel("comlpaiyts.xlsx")
 
 # Function to load Excel data with error handling
 def load_excel_data(file_path):
