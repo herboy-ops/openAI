@@ -50,9 +50,13 @@ def load_excel_data(file_path):
         logger.error(f"Error loading file {file_path}: {e}")
         raise HTTPException(status_code=500, detail=f"Error loading file {file_path}")
 
-# Load Excel data with error handling
+# Corrected file paths and redundant loading
+billing_path = "master table data.xlsx"
+complaints_path = "complaints.xlsx"  # ← Added this
 billing_df = load_excel_data(billing_path)
-complaints_df = load_excel_data(complaints_path)
+complaints_df = load_excel_data(complaints_path)  # ← Fixed typo and removed earlier duplicate
+
+
 
 # Load DialoGPT model
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
